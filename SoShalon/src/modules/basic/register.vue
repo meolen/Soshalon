@@ -105,7 +105,7 @@ export default {
   box-sizing: border-box;
 }
 body {
-  background-color: #ff3377;
+  background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-beauty-salon-6.jpg");
 }
 #login-form {
   width: 450px;

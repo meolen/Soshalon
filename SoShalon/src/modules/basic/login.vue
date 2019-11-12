@@ -25,6 +25,7 @@
     import Header from 'components/frame/Header.vue'
     import AUTH from 'services/auth' 
     import { constants } from "fs";
+    import router from "router";
     import axios from "axios";
     sessionStorage.setItem("token", false);
     export default {
@@ -42,15 +43,6 @@
             }
         },
         methods: {
-            login() {
-                if(this.input.username != "" && this.input.password != "") {  
-                    AUTH.loginValidate(this.input.email, this.input.password)
-                }
-                else{
-                    alert('Email and password must be present!')
-                }
-                
-            },
             log2(){
                 var data = {
                     username : this.input.username,
@@ -59,13 +51,13 @@
                 axios.get("http://localhost:3000/auth", data).then(
                     response => {
                         if (response.data.message == "ok") {
-                            console.log("user exist");
-                            //router.push({ path: "/register" });
+                            console.log("ok");
+                            router.push({ path: "/dashboard" });
                         }
                     },
                     err => {
                         console.log(err);
-                        console.log('user dont exist')
+                       // console.log('user dont exist')
                     }
                 );
             }
@@ -85,18 +77,20 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #FF3377;
+    background-image: url("https://i2.wp.com/backgroundcheckall.com/wp-content/uploads/2017/12/background-salon-pink-4.jpg?strip=info");
 }
 #login-form {
     width: 450px;
-    background: #fff;
+    background: black;
+    opacity: 0.7;
     padding: 80px 40px;
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     margin: 20px 0px;
 }
 #login-form h1 {
@@ -122,7 +116,7 @@ body {
 }
 .input-box input{
     font-size: 15px;
-    color: #333;
+    color: white;
     border: none;
     width: 100%;
     outline: none;
@@ -136,7 +130,7 @@ body {
     width: 100%;
     height: 50px;
     border: none;
-    background: linear-gradient(70deg,#FF3377,#03bcd4,#2196F3);
+    background: linear-gradient(180deg, #FF3377 0%, rgba(0, 59, 212, 0.8) 100%);
     background-size: 200%;
     color: #fff;
     outline: none;

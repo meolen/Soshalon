@@ -47,25 +47,18 @@ app.post('/create',function(req,res){
 app.get('/auth', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
-    User.findOne({username : username}).exec()
-    .then(() =>{
-        res.status(200).json({message: 'ok'})
-        console.log('user exist')
+    User.findOne({username : username}, (err, user) => {
+        if(!user) 
+            res.json({message: 'Log in failed, user not found'})
+            console.log('error')
+        // }
+        // else{
+        //     //res.send(user)
+        //     res.status(200).json({message:'ok'})
+        //     console.log('ok')
+        // }
     })
-    .catch(err => {
-        res.status(400).json({message:err.message})
-        console.log('error')
-    })
-    
-    // .then(() =>{
-    //     res.status(200).json({message:'ok'})
-    //     console.log('ok')
-    //     console.log(req.body.username)
-    // })
-    // .catch(err =>{
-    //     res.status(400).json({message:err.message})
-    //     console.log('error')
-    // })   
+
 });
 
 
