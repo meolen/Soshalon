@@ -13,7 +13,7 @@
         <a href="#" v-on:click = "redirect('/addCourse')"><i class="zmdi zmdi-widgets"></i>Add Course and Subjects</a>
       </div>
       <div id="div1" >
-        <a href="#" v-on:click ="logout()"><i class="zmdi zmdi-calendar"></i>Log out</a>
+        <a href="/logout" v-on:click ="logout()"><i class="zmdi zmdi-calendar"></i>Log out</a>
       </div>
     </ul>
     </div>

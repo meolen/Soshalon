@@ -1,70 +1,77 @@
 <template>
-<div>
+  <div>
     <Header></Header>
-    <form  id="login-form">
-	<h1>Welcome!</h1>
-	<div class="input-box">
-	<input v-model="input.username" placeholder="Username" required="required">
-	</div>
-	<div class="input-box">
-	<input type="password" v-model="input.password" placeholder="Password" required="required">
-	</div>
-	<label>
-	<input type="checkbox" name="remember"> Remember me
-	</label>
-    <button type="submit" class="login-btn"  v-on:click="log2()" >Login</button>
-	<div class="bottom-links">
-	<p>Don’t have account? <a href= "modules/register.vue">Sign up</a></p>
-	</div>
-	</form>
-</div>
-
-   
+    <form id="login-form" onsubmit="event.preventDefault();">
+      <h1>Welcome!</h1>
+      <div class="input-box">
+        <input type="text" v-model="input.username" placeholder="Username" required="required">
+      </div>
+      <div class="input-box">
+        <input type="password" v-model="input.password" placeholder="Password" required="required">
+      </div>
+      <label>
+        <input type="checkbox" name="remember"> Remember me
+      </label>
+      <button type="submit" class="login-btn" v-on:click="login()">Login</button>
+      <div class="bottom-links">
+        <p>
+          Don’t have account?
+          <a href="modules/register.vue">Sign up</a>
+        </p>
+      </div>
+    </form>
+  </div>
 </template>
 <script>
-    import Header from 'components/frame/Header.vue'
-    import AUTH from 'services/auth' 
-    import { constants } from "fs";
-    import router from "router";
-    import axios from "axios";
-    sessionStorage.setItem("token", false);
-    export default {
-        name:'login',
-        auth: AUTH,
-        components:{
-            Header
-        },
-        data() {
-            return {
-                input: {
-                    username: "",
-                    password: ""
-                }
-            }
-        },
-        methods: {
-            log2(){
-                var data = {
-                    username : this.input.username,
-                    password : this.input.password
-                }
-                axios.get("http://localhost:3000/auth", data).then(
-                    response => {
-                        if (response.data.message == "ok") {
-                            console.log("ok");
-                            router.push({ path: "/dashboard" });
-                        }
-                    },
-                    err => {
-                        console.log(err);
-                       // console.log('user dont exist')
-                    }
-                );
-            }
+import Header from "components/frame/Header.vue";
+import AUTH from "services/auth";
+import { constants } from "fs";
+import axios from "axios";
+import router from "router";
+sessionStorage.setItem("token", false);
+export default {
+  name: "login",
+  auth: AUTH,
+  components: {
+    Header
+  },
+  data() {
+    return {
+      input: {
+        username: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    login() {
+      var data = {
+        //email: this.input.email,
+        username: this.input.username,
+        password: this.input.password
+      };
 
-
+      axios.post("http://localhost:3000/auth", data).then(
+        response => {
+          if (response.data.message == "oks") {
+            console.log("ok");
+            router.push({ path: "/dashboard" });
+          }
+          if(response.data.message == "Wrong email or password."){
+              alert(response.data.message)
+          }
+        
+          
+        },
+        err => {
+          console.log(err);
+          //alert(message)
+          
         }
+      );
     }
+  }
+};
 </script>
 
 <style>
