@@ -55,7 +55,7 @@ export default {
         response => {
           if (response.data.message == "oks") {
             console.log("ok");
-            router.push({ path: "/dashboard" });
+            router.push({ path: "/profile" });
           }
           if(response.data.message == "Wrong email or password."){
               alert(response.data.message)
