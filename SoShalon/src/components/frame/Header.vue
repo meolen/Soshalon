@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-navbar toggleable="lg" type="dark"  variant="dark">
-            <b-navbar-brand id = "title" >SoShalon</b-navbar-brand>
+            <img id="logo" src="/logo.png">
             
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
@@ -20,6 +20,17 @@
     #title{
         color: $primary !important;
     }
+
+    #logo{
+        width: 200px;
+        height: auto
+    }
+    .bg-dark {
+        background-color: black !important;
+    }
+    .navbar-dark .navbar-nav .nav-link{
+    color:#00BCD4;
+}
 
 </style>
 

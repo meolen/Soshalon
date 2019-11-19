@@ -105,11 +105,11 @@ export default {
   box-sizing: border-box;
 }
 body {
-  background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-for-beauty-salon-6.jpg");
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-dark-purple-geometric-minimalist-background-effectgradientbusiness-image_87387.jpg");
 }
 #login-form {
   width: 450px;
-  background: #fff;
+  background: black;
   padding: 80px 40px;
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
@@ -151,20 +151,20 @@ body {
   height: 40px;
 }
 .login-btn {
-  display: block;
-  width: 100%;
-  height: 50px;
-  border: none;
-  background: linear-gradient(70deg, #ff3377, #03bcd4, #2196f3);
-  background-size: 200%;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-  margin: 20px 0px 0px;
-  border-radius: 50px;
-  transition: 0.5s;
-  font-size: 18px;
-  letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: linear-gradient(180deg, #FF3377 0%, rgba(0, 59, 212, 0.8) 100%);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    margin: 20px 0px 0px;
+    border-radius: 50px;
+    transition: .5s;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 .login-btn:hover {
   background-position: right;

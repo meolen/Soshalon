@@ -84,7 +84,7 @@ export default {
     box-sizing: border-box;
 }
 body {
-    background-image: url("https://i2.wp.com/backgroundcheckall.com/wp-content/uploads/2017/12/background-salon-pink-4.jpg?strip=info");
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-dark-purple-geometric-minimalist-background-effectgradientbusiness-image_87387.jpg");
 }
 #login-form {
     width: 450px;
