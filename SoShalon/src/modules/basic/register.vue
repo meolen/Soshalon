@@ -20,7 +20,7 @@
           v-model="input.cfmpassword"
         >
       </div>
-      <button type="submit" class="login-btn" v-on:click="reg2()">Register</button>
+      <button type="submit" class="login-btn" v-on:click="reg2()">Sign Up</button>
       <div class="bottom-links">
         <p>
           Already have an account?
@@ -105,7 +105,9 @@ export default {
   box-sizing: border-box;
 }
 body {
-  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-dark-purple-geometric-minimalist-background-effectgradientbusiness-image_87387.jpg");
+  background-image:url("/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 #login-form {
   width: 450px;
