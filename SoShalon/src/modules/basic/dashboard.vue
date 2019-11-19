@@ -7,8 +7,16 @@
             <img id = "profile" src="/profile.jpeg">
         </b-navbar>  
         </header>
+    
+        
+     
         <div id= "search">
+            
             <b-navbar id="search"> 
+                <b-dropdown id="dropdown-1" text="Choose Service" class="m-md-2">
+                <b-dropdown-item>Nail Polish</b-dropdown-item>
+                <b-dropdown-item>Haircut</b-dropdown-item>
+            </b-dropdown>
                 <button type="search" class="search-btn" v-on:click="search()">Search</button>
             </b-navbar>
         </div>  
@@ -75,15 +83,26 @@ export default {
             border-radius: 50px;
     }    
     #search{
-        background-color:rgba(0, 0, 0, 0.5);
+        background-color:rgba(0, 0, 0, 0.3);
     }
     .search-btn{
         background-color: rgba(0, 188, 212, 0.8);
         border-radius: 25px;
+        border-color:#00BCD4;
         width: 110px;
         height: 35px;
-        margin-left: 92%;
+        margin-left: 82%;
         color:#fff;
-
     }
+    .btn-secondary{
+    color: #545b62;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border-color: #545b62; */
+    margin-left: 645%;
+    }
+.btn-secondary:hover {
+    color: #fff;
+    background-color:  rgba(255, 255, 255, 0.8);
+    /* border-color: #545b62;    */
+}
 </style>
