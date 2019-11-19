@@ -24,7 +24,7 @@
       <div class="bottom-links">
         <p>
           Already have an account?
-          <a href="modules/login.vue">Log in</a>
+          <br><a href="modules/login.vue">Log in</a>
         </p>
       </div>
     </form>
@@ -127,7 +127,7 @@ body {
 }
 #login-form p {
   font-size: 16px;
-  color: #333;
+  color: white;
 }
 #login-form p a {
   color: #00bcd4;
@@ -142,7 +142,7 @@ body {
 }
 .input-box input {
   font-size: 15px;
-  color: #333;
+  color: white;
   border: none;
   width: 100%;
   outline: none;

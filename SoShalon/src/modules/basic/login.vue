@@ -16,7 +16,7 @@
       <div class="bottom-links">
         <p>
           Don’t have account?
-          <a href="modules/register.vue">Sign up</a>
+          <br><a href="modules/register.vue">Sign up</a>
         </p>
       </div>
     </form>
@@ -55,7 +55,7 @@ export default {
         response => {
           if (response.data.message == "oks") {
             console.log("ok");
-            router.push({ path: "/profile" });
+            router.push({ path: "/dashboard" });
           }
           if(response.data.message == "Wrong email or password."){
               alert(response.data.message)
@@ -108,7 +108,7 @@ body {
 }
 #login-form p {
     font-size: 16px;
-    color: #333;
+    color: white;
 }
 #login-form p a {
     color: #00bcd4;
