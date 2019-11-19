@@ -25,7 +25,7 @@ router.post('/auth', function (req, res, next) {
         req.session.password = user.password;
         req.session.User = user.username;
         res.status(200).json({ message: 'oks' })
-        //return res.redirect('modules/basic/dashboard.vue');
+        // return res.redirect('modules/basic/dashboard.vue');
       }
     });
   } else {
